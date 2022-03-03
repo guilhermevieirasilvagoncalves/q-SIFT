@@ -6,5 +6,4 @@ def gaussianFilter(sigma):
     g = np.exp(-((x**2 + y**2)/(2.0*sigma**2))) / (2*np.pi*sigma**2)
     return g/g.sum()
 
-    #filter
 
