@@ -1,3 +1,4 @@
+from numpy import imag
 from generateOctaveFilters import generateOctaveFilters
 from generateOctaveImages import generateOctaveImages
 from rgbToGray import *
@@ -20,8 +21,8 @@ if __name__ == '__main__':
     numOitavas = numeroOitavas(imgGaussiana.shape)
     filtrosOitavas = generateOctaveFilters(sigma, numintervalos)
     imagensOitavas = generateOctaveImages(imgGaussiana, numOitavas,filtrosOitavas)
-
     cv2.namedWindow("gray image",2) 
-    cv2.imshow("gray image",imgGaussiana)
+    cv2.imshow("gray image",imagensOitavas[0][0])
+    print("Geração de imagem com filtro gaussino\n")
     cv2.waitKey(0)
     cv2.destroyAllWindows
